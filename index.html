@@ -3,239 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover simple, practical ways AI can support your personal and professional life.">
-  <title>AI, Every Day — Practical AI for Life & Work</title>
+  <meta name="description" content="Discover practical, responsible ways AI can support life, learning, and work.">
+  <title>AI, Every Day — Make AI Useful</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="home">
   <header class="site-header">
-    <nav class="nav container" aria-label="Main navigation">
-      <a class="logo" href="#home" aria-label="AI Every Day home">
-        <span class="logo-mark" aria-hidden="true">✦</span>
-        AI, Every Day
-      </a>
-      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
-        <span></span><span></span>
-      </button>
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="logo" href="index.html"><span class="logo-mark">✦</span><span>AI, Every Day</span></a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
       <div class="nav-links">
-        <a href="#personal">Personal life</a>
-        <a href="#kids">For kids</a>
-        <a href="#professional">At work</a>
-        <a href="#responsible">Use AI wisely</a>
-        <a class="nav-cta" href="#start">Try a prompt</a>
+        <a data-nav="home" href="index.html">Home</a>
+        <a data-nav="personal" href="personal.html">Personal</a>
+        <a data-nav="kids" href="kids.html">Kids</a>
+        <a data-nav="professional" href="professional.html">Professional</a>
+        <a data-nav="responsible" href="responsible.html">Responsible AI</a>
       </div>
+      <a class="nav-cta" href="#explore">Explore AI <span>↗</span></a>
     </nav>
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <div class="hero-orb hero-orb-one"></div>
-      <div class="hero-orb hero-orb-two"></div>
-      <div class="container hero-grid">
+    <section class="hero">
+      <div class="grid-glow"></div>
+      <div class="shell hero-grid">
         <div class="hero-copy reveal">
-          <span class="eyebrow"><span></span> AI made practical</span>
-          <h1>A little help from AI can make a <em>big difference.</em></h1>
-          <p>From planning your week to shaping your next big idea, discover how AI can make everyday life simpler, smarter, and more creative.</p>
+          <span class="kicker"><i></i>AI made human</span>
+          <h1>Smarter days start with the <span>right questions.</span></h1>
+          <p>Explore how artificial intelligence can help you plan, learn, create, and work—while keeping your judgment firmly in control.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#personal">Explore everyday uses <span>→</span></a>
-            <a class="button button-ghost" href="#start">See example prompts</a>
+            <a class="button primary" href="#explore">Explore possibilities <span>→</span></a>
+            <a class="button secondary" href="responsible.html"><i data-lucide="shield-check"></i> Use AI wisely</a>
           </div>
-          <div class="trust-note">
-            <span class="trust-avatars" aria-hidden="true">
-              <i>✎</i><i>⌁</i><i>✓</i>
-            </span>
-            <span>No technical knowledge needed</span>
+          <div class="hero-proof">
+            <span><i data-lucide="sparkles"></i> Beginner friendly</span>
+            <span><i data-lucide="lock-keyhole"></i> Privacy aware</span>
+            <span><i data-lucide="heart"></i> Human centered</span>
           </div>
         </div>
-
-        <div class="hero-visual reveal" aria-label="Example AI conversation">
-          <div class="visual-glow"></div>
-          <div class="chat-card">
-            <div class="chat-top">
-              <span class="ai-avatar">✦</span>
-              <div><strong>Your AI helper</strong><small>Ready when you are</small></div>
-              <span class="online-dot"></span>
-            </div>
-            <div class="chat-body">
-              <div class="message user-message">Help me plan healthy dinners for this week.</div>
-              <div class="message ai-message">
-                <span class="tiny-spark">✦</span>
-                <div>
-                  <strong>Here’s a simple 5-day plan</strong>
-                  <ul>
-                    <li><span>Mon</span> Veggie stir-fry & rice</li>
-                    <li><span>Tue</span> Lentil soup & salad</li>
-                    <li><span>Wed</span> Baked fish & greens</li>
-                  </ul>
-                  <small>Want me to create a shopping list too?</small>
-                </div>
-              </div>
-            </div>
-            <div class="chat-input"><span>Ask anything...</span><button aria-label="Send">↑</button></div>
-          </div>
-          <div class="floating-pill pill-one">⏱ <span><strong>Save time</strong><small>on everyday tasks</small></span></div>
-          <div class="floating-pill pill-two">💡 <span><strong>Think bigger</strong><small>with fresh ideas</small></span></div>
+        <div class="hero-art reveal">
+          <div class="image-orbit orbit-one"></div>
+          <div class="image-orbit orbit-two"></div>
+          <img src="assets/ai-robot-hero.png" alt="Friendly futuristic robot using a holographic interface">
+          <div class="float-chip chip-top"><i data-lucide="zap"></i><span><strong>Fast ideas</strong><small>when you need a spark</small></span></div>
+          <div class="float-chip chip-bottom"><i data-lucide="brain-circuit"></i><span><strong>Better thinking</strong><small>with you in control</small></span></div>
         </div>
       </div>
-      <div class="hero-bottom-note">AI isn’t here to replace your thinking — it’s here to help it go further.</div>
+      <div class="scroll-cue"><span></span>Scroll to explore</div>
     </section>
 
-    <section class="section personal" id="personal">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow"><span></span> In your personal life</span>
-          <h2>More time for what matters to you.</h2>
-          <p>Think of AI as a patient helper—ready to organize, explain, create, and spark ideas whenever you need it.</p>
+    <section class="section explore" id="explore">
+      <div class="shell">
+        <div class="section-intro reveal">
+          <span class="kicker"><i></i>Choose your path</span>
+          <h2>Where can AI help you today?</h2>
+          <p>Each topic now has its own focused page, so you can find useful ideas without scrolling through everything.</p>
         </div>
-        <div class="card-grid">
-          <article class="use-card reveal">
-            <div class="icon-box lavender">✦</div>
+        <div class="path-grid">
+          <a class="path-card personal-card reveal" href="personal.html">
+            <span class="path-icon"><i data-lucide="sun"></i></span>
+            <span class="path-label">Everyday life</span>
+            <h3>Make more room for what matters.</h3>
+            <p>Plan your week, learn new skills, organize travel, and turn everyday questions into useful answers.</p>
+            <span class="path-link">Explore personal AI <i data-lucide="arrow-up-right"></i></span>
             <span class="card-number">01</span>
-            <h3>Plan & organize</h3>
-            <p>Turn a busy week into a clear plan, build travel itineraries, or make useful checklists in seconds.</p>
-            <span class="example">“Plan a 3-day family trip on a budget.”</span>
-          </article>
-          <article class="use-card reveal">
-            <div class="icon-box mint">⌁</div>
+          </a>
+          <a class="path-card kids-card reveal" href="kids.html">
+            <span class="path-icon"><i data-lucide="rocket"></i></span>
+            <span class="path-label">Young learners</span>
+            <h3>Turn curiosity into an adventure.</h3>
+            <p>Discover safe, supervised ways children can explore science, stories, puzzles, and the wider world.</p>
+            <span class="path-link">Explore AI for kids <i data-lucide="arrow-up-right"></i></span>
             <span class="card-number">02</span>
-            <h3>Learn anything</h3>
-            <p>Understand difficult topics in simple language, practice a new skill, or get a personalized study plan.</p>
-            <span class="example">“Explain investing like I’m a beginner.”</span>
-          </article>
-          <article class="use-card reveal">
-            <div class="icon-box peach">♡</div>
+          </a>
+          <a class="path-card work-card reveal" href="professional.html">
+            <span class="path-icon"><i data-lucide="briefcase-business"></i></span>
+            <span class="path-label">Work smarter</span>
+            <h3>Spend less time on busywork.</h3>
+            <p>Move faster through drafts, research, analysis, and repetitive tasks while preserving human judgment.</p>
+            <span class="path-link">Explore AI at work <i data-lucide="arrow-up-right"></i></span>
             <span class="card-number">03</span>
-            <h3>Live healthier</h3>
-            <p>Create meal ideas, build workout routines, or reflect with guided journaling prompts.</p>
-            <span class="example">“Suggest a gentle 15-minute workout.”</span>
-          </article>
-          <article class="use-card reveal">
-            <div class="icon-box yellow">✎</div>
+          </a>
+          <a class="path-card safe-card reveal" href="responsible.html">
+            <span class="path-icon"><i data-lucide="shield-check"></i></span>
+            <span class="path-label">Stay in control</span>
+            <h3>Use powerful tools thoughtfully.</h3>
+            <p>Learn practical habits for fact-checking, privacy, fairness, and responsible decision-making.</p>
+            <span class="path-link">Learn responsible AI <i data-lucide="arrow-up-right"></i></span>
             <span class="card-number">04</span>
-            <h3>Create & explore</h3>
-            <p>Brainstorm gifts, write stories, discover recipes from ingredients you have, or explore a new hobby.</p>
-            <span class="example">“What can I cook with these leftovers?”</span>
-          </article>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="section kids" id="kids">
-      <div class="kids-shape kids-shape-one" aria-hidden="true">★</div>
-      <div class="kids-shape kids-shape-two" aria-hidden="true">✦</div>
-      <div class="container kids-layout">
-        <div class="kids-copy reveal">
-          <span class="eyebrow"><span></span> AI for young learners</span>
-          <h2>Make learning feel like an adventure.</h2>
-          <p>With an adult nearby, children can use AI as a patient tutor, a creative partner, and a fun way to explore their endless questions.</p>
-          <div class="kids-safety">
-            <span>🛡️</span>
-            <p><strong>Grown-ups stay involved.</strong> Children should use AI with supervision, avoid sharing personal details, and check answers together.</p>
-          </div>
+    <section class="section prompt-band">
+      <div class="shell prompt-panel reveal">
+        <div>
+          <span class="kicker"><i></i>Try this now</span>
+          <h2>One useful prompt can change your day.</h2>
         </div>
-        <div class="kids-cards">
-          <article class="kid-card kid-card-yellow reveal">
-            <span class="kid-icon">🔭</span>
-            <div><h3>Explore big questions</h3><p>Turn “Why is the sky blue?” into a friendly, age-appropriate explanation.</p></div>
-          </article>
-          <article class="kid-card kid-card-pink reveal">
-            <span class="kid-icon">🎨</span>
-            <div><h3>Create stories & art</h3><p>Invent characters, build magical worlds, and find inspiration for drawing projects.</p></div>
-          </article>
-          <article class="kid-card kid-card-blue reveal">
-            <span class="kid-icon">🧩</span>
-            <div><h3>Practice through play</h3><p>Make spelling quizzes, math puzzles, and memory games that match their level.</p></div>
-          </article>
-          <article class="kid-card kid-card-green reveal">
-            <span class="kid-icon">🌍</span>
-            <div><h3>Discover the world</h3><p>Learn about animals, places, science, and cultures through curious conversations.</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section professional" id="professional">
-      <div class="container work-grid">
-        <div class="work-copy reveal">
-          <span class="eyebrow light"><span></span> In your professional life</span>
-          <h2>Do your best work, with less busywork.</h2>
-          <p>AI can help you move from a blank page to a strong first draft, find patterns faster, and spend more energy on decisions that need your human judgment.</p>
-          <div class="stat-row">
-            <div><strong>Faster</strong><span>first drafts</span></div>
-            <div><strong>Clearer</strong><span>communication</span></div>
-            <div><strong>More</strong><span>room to create</span></div>
-          </div>
-        </div>
-        <div class="work-list">
-          <article class="work-item reveal">
-            <span class="work-icon">✎</span>
-            <div><h3>Write & communicate</h3><p>Draft emails, simplify reports, adjust tone, and turn rough notes into polished messages.</p></div>
-          </article>
-          <article class="work-item reveal">
-            <span class="work-icon">⌁</span>
-            <div><h3>Research & summarize</h3><p>Get a quick overview of a topic, compare ideas, and pull key points from long information.</p></div>
-          </article>
-          <article class="work-item reveal">
-            <span class="work-icon">◫</span>
-            <div><h3>Analyze & improve</h3><p>Spot patterns in data, organize feedback, and explore different approaches to a problem.</p></div>
-          </article>
-          <article class="work-item reveal">
-            <span class="work-icon">⚡</span>
-            <div><h3>Automate routine tasks</h3><p>Create templates, repeatable workflows, and simple systems that save time every week.</p></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section responsible" id="responsible">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow"><span></span> Use AI wisely</span>
-          <h2>Smart tools still need human judgment.</h2>
-          <p>AI is a helpful partner, not a perfect authority. A few good habits make all the difference.</p>
-        </div>
-        <div class="wisdom-grid">
-          <article class="wisdom-card reveal"><span>✓</span><h3>Check important facts</h3><p>AI can make confident mistakes. Verify medical, legal, financial, and other important information.</p></article>
-          <article class="wisdom-card reveal"><span>◉</span><h3>Protect your privacy</h3><p>Avoid sharing passwords, private company data, financial details, or sensitive personal information.</p></article>
-          <article class="wisdom-card reveal"><span>♙</span><h3>Keep yourself in charge</h3><p>Use AI to support—not replace—your experience, values, creativity, and final decisions.</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section start" id="start">
-      <div class="container start-card reveal">
-        <div class="start-copy">
-          <span class="eyebrow light"><span></span> Your turn</span>
-          <h2>Start with a simple conversation.</h2>
-          <p>A good prompt gives AI a role, some context, and a clear goal. Try one of these, then make it your own.</p>
-        </div>
-        <div class="prompt-list">
-          <button class="prompt" data-prompt="Act as a patient tutor. Teach me the basics of a topic I choose, using simple examples.">
-            <span>Learn something</span><p>“Act as a patient tutor. Teach me the basics of...”</p><i>Copy</i>
-          </button>
-          <button class="prompt" data-prompt="Help me plan my week. Ask me three questions about my priorities first.">
-            <span>Plan your week</span><p>“Help me plan my week. Ask me three questions...”</p><i>Copy</i>
-          </button>
-          <button class="prompt" data-prompt="Improve this message so it sounds clear, warm, and professional:">
-            <span>Polish a message</span><p>“Improve this message so it sounds clear, warm...”</p><i>Copy</i>
-          </button>
-        </div>
+        <button class="copy-prompt" data-prompt="Help me plan tomorrow. First ask me about my top three priorities, available time, and one thing I want to avoid.">
+          <span>“Help me plan tomorrow. First ask about my top three priorities...”</span>
+          <i data-lucide="copy"></i>
+        </button>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <a class="logo" href="#home"><span class="logo-mark">✦</span> AI, Every Day</a>
-      <p>Helping people make AI useful, human, and understandable.</p>
-      <span>Made for curious minds.</span>
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <a class="logo" href="index.html"><span class="logo-mark">✦</span><span>AI, Every Day</span></a>
+      <p>Making AI useful, understandable, and human.</p>
+      <span>Learn • Experiment • Stay curious</span>
     </div>
   </footer>
-
-  <div class="toast" role="status" aria-live="polite">Prompt copied!</div>
+  <div class="toast" role="status" aria-live="polite">Prompt copied</div>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

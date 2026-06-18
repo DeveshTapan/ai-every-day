@@ -1,21 +1,26 @@
 const header = document.querySelector(".site-header");
 const menuButton = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
+const currentPage = document.body.dataset.page;
 const toast = document.querySelector(".toast");
 
+if (window.lucide) lucide.createIcons();
+
+document.querySelector(`[data-nav="${currentPage}"]`)?.classList.add("active");
+
 window.addEventListener("scroll", () => {
-  header.classList.toggle("scrolled", window.scrollY > 10);
+  header?.classList.toggle("scrolled", window.scrollY > 12);
 });
 
-menuButton.addEventListener("click", () => {
-  const isOpen = navLinks.classList.toggle("open");
-  menuButton.setAttribute("aria-expanded", isOpen);
+menuButton?.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", String(open));
 });
 
 document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("open");
-    menuButton.setAttribute("aria-expanded", "false");
+    menuButton?.setAttribute("aria-expanded", "false");
   });
 });
 
@@ -28,30 +33,28 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+document.querySelectorAll(".reveal").forEach((item) => observer.observe(item));
 
-document.querySelectorAll(".prompt").forEach((button) => {
+document.querySelectorAll(".copy-prompt").forEach((button) => {
   button.addEventListener("click", async () => {
     let copied = false;
     try {
       await navigator.clipboard.writeText(button.dataset.prompt);
       copied = true;
     } catch {}
-
     if (!copied) {
-      const fallback = document.createElement("textarea");
-      fallback.value = button.dataset.prompt;
-      fallback.setAttribute("readonly", "");
-      fallback.style.position = "fixed";
-      fallback.style.opacity = "0";
-      document.body.appendChild(fallback);
-      fallback.select();
+      const field = document.createElement("textarea");
+      field.value = button.dataset.prompt;
+      field.style.cssText = "position:fixed;opacity:0";
+      document.body.appendChild(field);
+      field.select();
       copied = document.execCommand("copy");
-      fallback.remove();
+      field.remove();
     }
-
-    toast.textContent = copied ? "Prompt copied!" : "Could not copy prompt";
-    toast.classList.add("show");
-    setTimeout(() => toast.classList.remove("show"), 1800);
+    if (toast) {
+      toast.textContent = copied ? "Prompt copied" : "Copy unavailable";
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 1600);
+    }
   });
 });
