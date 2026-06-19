@@ -3,6 +3,8 @@ const menuButton = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
 const currentPage = document.body.dataset.page;
 const toast = document.querySelector(".toast");
+const clockTime = document.querySelector("#digital-time");
+const clockDate = document.querySelector("#digital-date");
 
 if (window.lucide) lucide.createIcons();
 
@@ -34,6 +36,24 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll(".reveal").forEach((item) => observer.observe(item));
+
+function updateClock() {
+  if (!clockTime || !clockDate) return;
+  const now = new Date();
+  clockTime.textContent = new Intl.DateTimeFormat(undefined, {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
+  }).format(now);
+  clockDate.textContent = new Intl.DateTimeFormat(undefined, {
+    weekday: "short",
+    day: "2-digit",
+    month: "short"
+  }).format(now);
+}
+
+updateClock();
+setInterval(updateClock, 1000);
 
 document.querySelectorAll(".copy-prompt").forEach((button) => {
   button.addEventListener("click", async () => {
