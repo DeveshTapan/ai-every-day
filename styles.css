@@ -39,6 +39,7 @@ img { max-width: 100%; display: block; }
 }
 .site-header.scrolled { border-color: var(--line); background: rgba(6,9,20,.9); }
 .nav { height: 76px; display: flex; align-items: center; gap: 30px; }
+.home-nav { width: min(1450px, calc(100% - 40px)); }
 .logo { display: inline-flex; align-items: center; gap: 10px; font: 800 15px Manrope,sans-serif; white-space: nowrap; }
 .logo-mark {
   display: grid; place-items: center; width: 35px; height: 35px; border-radius: 11px;
@@ -84,18 +85,19 @@ h1,h2,h3 { font-family: Manrope,sans-serif; }
 .hero-proof span { display: inline-flex; align-items: center; gap: 7px; }
 .hero-proof svg { width: 15px; color: var(--lime); }
 .digital-clock {
-  display: inline-flex; align-items: center; gap: 13px; margin-top: 25px; padding: 11px 15px 11px 11px;
+  display: inline-flex; align-items: center; gap: 13px; padding: 9px 14px 9px 9px;
   background: rgba(16,23,42,.72); border: 1px solid rgba(53,231,255,.2); border-radius: 15px;
   box-shadow: 0 14px 35px rgba(0,0,0,.18); backdrop-filter: blur(12px);
 }
+.header-clock { flex: 0 0 auto; }
 .clock-icon {
-  display: grid; place-items: center; width: 38px; height: 38px; color: #07101a;
+  display: grid; place-items: center; width: 36px; height: 36px; color: #07101a;
   background: linear-gradient(135deg,var(--cyan),var(--lime)); border-radius: 11px;
 }
 .clock-icon svg { width: 19px; }
 .clock-copy small,.clock-copy strong { display: block; }
 .clock-copy small { margin-bottom: 2px; color: var(--muted); font-size: 8px; letter-spacing: 1.2px; text-transform: uppercase; }
-.clock-copy strong { min-width: 104px; font: 700 19px/1.1 Manrope,sans-serif; letter-spacing: 1px; font-variant-numeric: tabular-nums; }
+.clock-copy strong { min-width: 104px; font: 700 17px/1.1 Manrope,sans-serif; letter-spacing: 1px; font-variant-numeric: tabular-nums; }
 .clock-date { margin-left: 2px; padding-left: 14px; color: #c5cee2; border-left: 1px solid var(--line); font-size: 10px; white-space: nowrap; }
 .hero-art { position: relative; min-height: 560px; display: grid; align-items: center; }
 .hero-art::after {
@@ -200,20 +202,31 @@ h1,h2,h3 { font-family: Manrope,sans-serif; }
 @keyframes cue-pulse { 0%,100%{width:18px;opacity:.45}50%{width:34px;opacity:1} }
 @keyframes morph { 0%,100%{border-radius:34% 66% 58% 42%}50%{border-radius:62% 38% 35% 65%;transform:rotate(5deg)} }
 
+@media(max-width:1250px) and (min-width:981px){
+  .home-nav { gap:18px }
+  .header-clock { padding:7px 10px 7px 7px;gap:8px }
+  .header-clock .clock-icon { width:32px;height:32px }
+  .header-clock .clock-copy small,.header-clock .clock-date { display:none }
+  .header-clock .clock-copy strong { min-width:88px;font-size:13px;letter-spacing:.4px }
+}
 @media(max-width:980px){
   .nav-links { position: absolute; display: none; top: 68px; left: 20px; right: 20px; flex-direction: column; align-items: stretch; padding: 12px; background: #0b1020; border: 1px solid var(--line); border-radius: 15px; }
   .nav-links.open { display: flex; }.nav-cta { display:none; }.menu-toggle{display:block}
   .hero-grid,.page-hero-grid,.prompt-panel { grid-template-columns:1fr; }
   .hero-copy { text-align:center; }.hero-copy>p{margin-inline:auto}.hero-actions,.hero-proof{justify-content:center}
-  .digital-clock { margin-inline: auto; }
   .hero-art{min-height:500px}.page-symbol{display:none}
   .path-grid,.feature-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:650px){
-  .shell{width:min(100% - 28px,var(--shell))}.nav{height:66px}
+  .shell{width:min(100% - 28px,var(--shell))}.nav{height:66px;gap:10px}.home-nav{width:min(100% - 20px,var(--shell))}
   .hero{padding-top:115px;min-height:auto}.hero h1{font-size:43px;letter-spacing:-2.5px}
   .hero-copy>p{font-size:16px}.hero-proof{gap:12px}.hero-art{min-height:390px}
-  .digital-clock { width: min(100%,340px); justify-content: flex-start; }
+  .header-clock { margin-left:auto; padding:7px 9px 7px 7px; gap:8px; }
+  .header-clock .clock-icon { width:30px;height:30px;border-radius:9px }
+  .header-clock .clock-icon svg { width:16px }
+  .header-clock .clock-copy small,.header-clock .clock-date { display:none }
+  .header-clock .clock-copy strong { min-width:82px;font-size:12px;letter-spacing:.4px }
+  .menu-toggle { margin-left:0 }
   .hero-art img{min-height:380px}.image-orbit{display:none}.float-chip{display:none}.scroll-cue{display:none}
   .section{padding:78px 0}.callout-section{padding:30px 0}.next-section{padding:30px 0 52px}.compact-section{padding:38px 0 58px}.path-grid,.feature-grid{grid-template-columns:1fr}.path-card{min-height:350px;padding:27px}
   .section-intro h2,.prompt-panel h2{font-size:34px}.prompt-panel{padding:28px;gap:25px}
