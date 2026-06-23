@@ -9,14 +9,16 @@ import {
 } from '../../utils/testHelpers';
 
 test.describe('AI, Every Day functional tests', () => {
-  test('home page loads correctly @regression', async ({ page }) => {
+  // TC-FUNC-001: Validate that the home page loads successfully with expected content.
+  test('TC-FUNC-001: home page loads correctly @regression', async ({ page }) => {
     const homePage = new HomePage(page);
 
     await homePage.goto();
     await homePage.expectLoaded();
   });
 
-  test('main navigation links work correctly @regression', async ({ page }) => {
+  // TC-FUNC-002: Validate that main navigation links route to the expected internal pages.
+  test('TC-FUNC-002: main navigation links work correctly @regression', async ({ page }) => {
     const navigation = new Navigation(page);
 
     await page.goto('/');
@@ -39,19 +41,23 @@ test.describe('AI, Every Day functional tests', () => {
     await expect(page.getByRole('heading', { level: 1 })).toContainText(/human wisdom/);
   });
 
+  // TC-FUNC-DYNAMIC:
+  // Generates one functional test per internal page from sitePages, excluding the home page.
   for (const sitePage of sitePages.slice(1)) {
-    test(`${sitePage.path} opens successfully`, async ({ page }) => {
+    test(`TC-FUNC-DYNAMIC: ${sitePage.path} opens successfully`, async ({ page }) => {
       await expectPageReady(page, sitePage);
     });
   }
 
-  test('CSS file loads correctly', async ({ page }) => {
+  // TC-FUNC-003: Validate that the website stylesheet loads successfully.
+  test('TC-FUNC-003: CSS file loads correctly', async ({ page }) => {
     await expectSuccessfulResponse(page, 'styles.css', async () => {
       await page.goto('/');
     });
   });
 
-  test('JavaScript file loads correctly', async ({ page }) => {
+  // TC-FUNC-004: Validate that the website JavaScript loads and applies expected page state.
+  test('TC-FUNC-004: JavaScript file loads correctly', async ({ page }) => {
     await expectSuccessfulResponse(page, 'script.js', async () => {
       await page.goto('/');
     });
@@ -59,14 +65,16 @@ test.describe('AI, Every Day functional tests', () => {
     await expect(page.getByRole('link', { name: 'Home' })).toHaveClass(/active/);
   });
 
-  test('images and assets load correctly @regression', async ({ page }) => {
+  // TC-FUNC-005: Validate that key images and static assets load correctly.
+  test('TC-FUNC-005: images and assets load correctly @regression', async ({ page }) => {
     const homePage = new HomePage(page);
 
     await homePage.goto();
     await expectImageLoaded(homePage.heroImage);
   });
 
-  test('footer is visible', async ({ page }) => {
+  // TC-FUNC-006: Validate that the site footer is visible on the home page.
+  test('TC-FUNC-006: footer is visible', async ({ page }) => {
     const homePage = new HomePage(page);
 
     await homePage.goto();
