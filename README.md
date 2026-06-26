@@ -369,3 +369,23 @@ Functional Testing
 Regression Testing
 Automation Framework Design
 ```
+
+## Quick Test Commands
+
+Run functional test cases:
+
+```powershell
+npm.cmd test -- tests/functional/website-functional.spec.ts
+```
+
+Run regression test cases:
+
+```powershell
+npm.cmd run test:regression
+```
+
+Open the latest Playwright HTML report:
+
+```powershell
+npx.cmd playwright show-report
+```
