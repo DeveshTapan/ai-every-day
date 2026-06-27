@@ -389,3 +389,8 @@ Open the latest Playwright HTML report:
 ```powershell
 npx.cmd playwright show-report
 ```
+
+***Below is the prompt to give in codex***
+Run the ai-every-day regression test suite without modifying source files. First check git status, then run:
+npm.cmd run test:regression
+Summarize total tests, passed/failed counts, failed test names, overall status, and final Git status. Do not commit, push, edit files, or open the Playwright HTML report.
