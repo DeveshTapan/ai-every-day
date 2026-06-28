@@ -5,13 +5,23 @@ const currentPage = document.body.dataset.page;
 const toast = document.querySelector(".toast");
 const clockTime = document.querySelector("#digital-time");
 const clockDate = document.querySelector("#digital-date");
+const backToTop = document.querySelector(".back-to-top");
 
 if (window.lucide) lucide.createIcons();
 
 document.querySelector(`[data-nav="${currentPage}"]`)?.classList.add("active");
 
-window.addEventListener("scroll", () => {
+function updateScrollState() {
   header?.classList.toggle("scrolled", window.scrollY > 12);
+  backToTop?.classList.toggle("visible", window.scrollY > 400);
+}
+
+window.addEventListener("scroll", updateScrollState, { passive: true });
+updateScrollState();
+
+backToTop?.addEventListener("click", () => {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
 });
 
 menuButton?.addEventListener("click", () => {
