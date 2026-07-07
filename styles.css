@@ -186,6 +186,7 @@ h1,h2,h3 { font-family: Manrope,sans-serif; }
 .toast.show { opacity: 1; transform: translate(-50%,0); }
 
 .page-hero { position: relative; min-height: 570px; padding: 165px 0 85px; overflow: hidden; border-bottom: 1px solid var(--line); }
+body[data-page="kids"] .page-hero { --accent: var(--pink); }
 .page-hero::before { content: ""; position: absolute; width: 520px; height: 520px; top: 35px; right: 5%; border-radius: 50%; background: var(--accent); filter: blur(180px); opacity: .13; }
 .page-hero-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr .75fr; gap: 70px; align-items: center; }
 .breadcrumbs { display: flex; gap: 8px; color: #68738e; font-size: 11px; }.breadcrumbs a:hover { color: var(--cyan); }
