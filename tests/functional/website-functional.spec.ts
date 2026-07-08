@@ -50,14 +50,14 @@ test.describe('AI, Every Day functional tests', () => {
   }
 
   // TC-FUNC-003: Validate that the website stylesheet loads successfully.
-  test('TC-FUNC-003: CSS file loads correctly', async ({ page }) => {
+  test('TC-FUNC-003: CSS file loads correctly @regression', async ({ page }) => {
     await expectSuccessfulResponse(page, 'styles.css', async () => {
       await page.goto('/');
     });
   });
 
   // TC-FUNC-004: Validate that the website JavaScript loads and applies expected page state.
-  test('TC-FUNC-004: JavaScript file loads correctly', async ({ page }) => {
+  test('TC-FUNC-004: JavaScript file loads correctly @regression', async ({ page }) => {
     await expectSuccessfulResponse(page, 'script.js', async () => {
       await page.goto('/');
     });
